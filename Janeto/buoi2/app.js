@@ -1,1 +1,3 @@
-console.log("Hello!")
+var { hello, myClass } = require("./module")
+hello()
+console.log(myClass)
