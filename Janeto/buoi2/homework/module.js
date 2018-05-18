@@ -1,10 +1,10 @@
 var fs = require("fs")
-exports.tinhTong = (a, b)=> {
+tinhTong = (a, b)=> {
     return a+b
 }
-exports.readFile = ()=> {
+readFile = (name)=> {
     return new Promise((resolve, rej)=> {
-        fs.readFile("./a.txt", (err, out)=> {
+        fs.readFile(name, (err, out)=> {
             if(err) {
                 rej(err+"")
             }
@@ -12,4 +12,24 @@ exports.readFile = ()=> {
            resolve(out.toString())
         })
     })
+}
+
+createFile = ()=> {
+    fs.writeFile("./a.txt", "ASSSSSSSSAA",function (e, d) {
+        if(e) {
+            console.log(e)
+        }else {
+            try{
+                readFile("./a.txt").then(res => console.log(res)).catch(err => console.log(err))
+            }catch(err){
+                console.log(err)
+            }
+        }
+    })
+}
+
+module.exports  = {
+    tinhTong,
+    readFile, 
+    createFile
 }
