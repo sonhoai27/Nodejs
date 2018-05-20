@@ -1,3 +1,3 @@
-var { readFile, readFolder } = require("./module")
+var { readFile, readFolder, deleteFileFolder, createFile } = require("./module")
 
-readFolder("./myFolder/");
+createFile("./myFolder/", "son.txt", "AAAA");
