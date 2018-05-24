@@ -17,7 +17,13 @@ const writeFile = (file, content) => {
     })
 }
 
+const getInfoFile = (path) => {
+    fs.stat(path, (err, info) => {
+        console.log(info)
+    })
+}
 module.exports = {
     readFile,
-    writeFile
+    writeFile,
+    getInfoFile
 }
